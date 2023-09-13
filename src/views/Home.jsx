@@ -4,6 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import 'animate.css';
 import Footer from './Footer';
 import BackTotop from './BackTotop';
+import four from "../four.jpg"
 
 export default function Home() {
   return (
@@ -46,7 +47,7 @@ export default function Home() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/274605743_122581793676666_8645886919058105212_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=52f669&_nc_ohc=KLAF67JJj-8AX_0uIFd&_nc_oc=AQkx7RpdPwFyAUBirL1x8Xxly6NgGSnpkPutCxt2_43g7rvQgh59BllgJCP1_07r3cs&_nc_ht=scontent.fcai19-6.fna&oh=00_AfCjLVLychwU2SM8BsYMI_xPrIMTXscq6QzU4A1YznWNFQ&oe=6500C2B7"
+            src={four}
             alt="Slide 4"
           />
           <Carousel.Caption>

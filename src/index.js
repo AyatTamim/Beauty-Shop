@@ -15,6 +15,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import ViewMore from './views/ViewMore';
 import FooterCategories from './views/FooterCategories';
+import ShowCategoriesDetails from './views/ShowCategoriesDetails';
 
 i18n
   .use(initReactI18next)
@@ -59,10 +60,9 @@ const router = createBrowserRouter([
     path: "/*",
     element: <Error />
   },
-  ,
   {
-    path: "/categories/:productCategory",
-    element: <FooterCategories />
+    path: "/products/category/:cat",
+    element: <ShowCategoriesDetails />
   }
 ]);
 
