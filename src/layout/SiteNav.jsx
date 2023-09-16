@@ -4,8 +4,22 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import checks from "../checks.png"
+import { useTranslation } from "react-i18next";
+import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLanguage } from '@fortawesome/free-solid-svg-icons'
+import i18n from "i18next";
 
 export default function SiteNav() {
+  const { t } = useTranslation();
+  document.body.dir = i18n.dir();  
+  let changeLAnguage = () => {
+    i18n.language === "en" ? i18n.changeLanguage('ar') : i18n.changeLanguage('en');
+    localStorage.setItem("language", i18n.language)
+  }
+  useEffect(() => {
+    i18n.changeLanguage(localStorage.getItem("language"))
+  }, [])
   return (
     <>
       <Navbar expand="md" >
@@ -14,19 +28,20 @@ export default function SiteNav() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto">
-              <NavLink className="nav-link" to="/">Home</NavLink>
-              <NavLink className="nav-link " to="/about">About</NavLink>
-              <NavLink className="nav-link " to="/cart">Cart</NavLink>
-              <NavLink className="nav-link " to="/products">Product</NavLink>
+              <NavLink className="nav-link" to="/">{t('Home')}</NavLink>
+              <NavLink className="nav-link " to="/about">{t("About")}</NavLink>
+              <NavLink className="nav-link " to="/cart">{t("Cart")}</NavLink>
+              <NavLink className="nav-link " to="/products">{t("Product")}</NavLink>
+              <FontAwesomeIcon className="fa-2x m-1" icon={faLanguage} onClick={changeLAnguage} />
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <img 
-            src={checks}
-            width="100%"
-          />
-      </>
+      <img
+        src={checks}
+        width="100%"
+      />
+    </>
 
   )
 }

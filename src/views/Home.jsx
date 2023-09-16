@@ -6,6 +6,7 @@ import Footer from './Footer';
 import BackTotop from './BackTotop';
 import four from "../four.jpg"
 
+
 export default function Home() {
   return (
     <>
@@ -83,6 +84,7 @@ export default function Home() {
       </Carousel>
       <BackTotop/>
       <Footer />
+      
     </>
   )
 }

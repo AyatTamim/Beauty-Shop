@@ -4,10 +4,6 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom"
-import ViewMore from './ViewMore';
-
-
-
 
 export default function ProductDetails({ product }) {
     const params = useParams();

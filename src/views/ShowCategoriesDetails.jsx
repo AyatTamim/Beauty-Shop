@@ -7,11 +7,17 @@ export default function ShowCategoriesDetails() {
     const params = useParams()
     let [selectedCat, setSelectedCat] = useState([])
 
+    // let getCatDetails = () => {
+    //     fetch("http://localhost:2222/products")
+    //         .then(json => json.json())
+    //         .then(res => setSelectedCat(res.filter(product =>
+    //             product.category == params.cat))) 
+    // }
+
     let getCatDetails = () => {
-        fetch("http://localhost:2222/products")
+        fetch("http://localhost:2222/products/category/" + params.cat)
             .then(json => json.json())
-            .then(res => setSelectedCat(res.filter(product =>
-                product.category == params.cat))) 
+            .then(res => setSelectedCat(res))
     }
 
     useEffect(() => {
