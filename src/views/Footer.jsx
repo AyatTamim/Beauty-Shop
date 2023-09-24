@@ -12,10 +12,7 @@ export default function Footer() {
 
     <>
       <div className='footerStyle pb-5'>
-        <img
-          src={checks}
-          width="100%"
-        />
+        
         <div className="container text-center">
           <div className="row">
             <div className="col-md-4 pt-5">
@@ -63,7 +60,11 @@ export default function Footer() {
           </div>
         </div>
       </div >
-      <div className="col-12 d-flex flex-column design pt-3 mx-auto">
+      <div className="col-12 d-flex flex-column design mx-auto">
+      <img className='pb-4'
+          src={checks}
+          width="100%"
+        />
         <p className="text-center">Copyright © 2023 Beauty Shop</p>
         <p className="text-center">Designed by Ayat Tamim</p>
       </div>

@@ -10,14 +10,16 @@ import About from "./views/About"
 import Products from './views/Products';
 import Cart from './views/Cart';
 import Error from './views/Error';
+import Wishlist from './views/Wishlist';
+import Addtocart from './views/Addtocart';
 import "./sass/styles.scss"
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import ViewMore from './views/ViewMore';
 import FooterCategories from './views/FooterCategories';
 import ShowCategoriesDetails from './views/ShowCategoriesDetails';
-import EnglishTranslation from "./locale/en.json";
-import ArabicTranslation from "./locale/ar.json";
+import EnglishTranslation from "./local/en.json";
+import ArabicTranslation from "./local/ar.json";
 
 i18n
   .use(initReactI18next)
@@ -57,8 +59,17 @@ const router = createBrowserRouter([
     element: <ViewMore />
   },
   {
+    path: "/products/add/:productId",
+    element: <Addtocart />
+  },
+  {
     path: "/cart",
     element: <Cart />
+  },
+  ,
+  {
+    path: "/wishlist",
+    element: <Wishlist />
   },
   {
     path: "/*",

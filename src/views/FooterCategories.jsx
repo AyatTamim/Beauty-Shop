@@ -1,6 +1,5 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 
@@ -43,7 +42,7 @@ export default function FooterCategories() {
         <div className='d-flex flex-column'>
             {
                 categories.map((category, index) =>
-                    category && <Link to={`/products/${category}`} key={index} className=' text-capitalize' onClick={() => productFilter(category)}>{category.split("_").join(" ")}
+                    category && <Link to={`/products/category/${category}`} key={index} className=' text-capitalize' onClick={() => productFilter(category)}>{category.split("_").join(" ")}
                     </Link>
                 )}
         </div>

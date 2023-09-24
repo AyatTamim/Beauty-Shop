@@ -7,9 +7,13 @@
 @import "./views/productDetails";
 @import "./views/footer";
 @import "./views/backtotop";
+@import "./views/about";
+@import "./common/mixins";
+@import "./common/variables";
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 .index {
   font-family: "Dancing Script", cursive;

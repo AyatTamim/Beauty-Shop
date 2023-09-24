@@ -15,6 +15,9 @@
 }
 .product:hover {
   color: $hover-color;
+  display: inline-block;
+  animation: pulse;
+  animation-duration: 1s;
 }
 
 .imageSize {

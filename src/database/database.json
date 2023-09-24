@@ -12,6 +12,7 @@
       "website_link": "https://www.nyxcosmetics.com",
       "description": "More delicious than peaches and cream? We like to think so. Our velvety smooth mineral Rouge Cream Blush offers a sheer wash of radiant color. The glorious payoff is dewy sultry and long-lasting.",
       "rating": null,
+      "category": null,
       "product_type": "blush",
       "tag_list": [],
       "created_at": "2017-12-24T02:28:39.285Z",
@@ -5022,7 +5023,7 @@
       ]
     },
     {
-      "id": 1048,
+      "id": 70,
       "brand": "colourpop",
       "name": "Lippie Pencil",
       "price": "5.0",
@@ -5078,7 +5079,7 @@
       ]
     },
     {
-      "id": 1047,
+      "id": 71,
       "brand": "colourpop",
       "name": "Blotted Lip",
       "price": "5.5",
@@ -5107,7 +5108,7 @@
       ]
     },
     {
-      "id": 1046,
+      "id": 72,
       "brand": "colourpop",
       "name": "Lippie Stix",
       "price": "5.5",
@@ -5175,7 +5176,7 @@
       ]
     },
     {
-      "id": 547,
+      "id": 73,
       "brand": "smashbox",
       "name": "Halo HD Foundation SPF 15",
       "price": "45.0",
@@ -5202,7 +5203,7 @@
       ]
     },
     {
-      "id": 546,
+      "id": 74,
       "brand": "smashbox",
       "name": "Camera Ready CC Cream",
       "price": "42.0",
@@ -5232,7 +5233,7 @@
       ]
     },
     {
-      "id": 545,
+      "id": 75,
       "brand": "smashbox",
       "name": "Camera Ready BB Cream SPF 35",
       "price": "39.0",
@@ -5262,7 +5263,7 @@
       ]
     },
     {
-      "id": 544,
+      "id": 76,
       "brand": "smashbox",
       "name": "Camera Ready BB Water SPF 30",
       "price": "42.0",
@@ -5291,7 +5292,7 @@
       ]
     },
     {
-      "id": 543,
+      "id": 77,
       "brand": "smashbox",
       "name": "STUDIO SKIN 15 HOUR WEAR HYDRATING FOUNDATION ",
       "price": "42.0",
@@ -5335,7 +5336,7 @@
       ]
     },
     {
-      "id": 542,
+      "id": 78,
       "brand": "smashbox",
       "name": "Hyperlash Mascara",
       "price": "23.0",
@@ -5356,7 +5357,7 @@
       "product_colors": []
     },
     {
-      "id": 541,
+      "id": 79,
       "brand": "smashbox",
       "name": "Full Exposure Waterproof Mascara",
       "price": "22.0",
@@ -5377,7 +5378,7 @@
       "product_colors": []
     },
     {
-      "id": 540,
+      "id": 80,
       "brand": "smashbox",
       "name": "Full Exposure Mascara",
       "price": "22.0",
@@ -5398,7 +5399,7 @@
       "product_colors": []
     },
     {
-      "id": 539,
+      "id": 81,
       "brand": "smashbox",
       "name": "Indecent Exposure Mascara",
       "price": "22.0",
@@ -5419,7 +5420,7 @@
       "product_colors": []
     },
     {
-      "id": 538,
+      "id": 82,
       "brand": "smashbox",
       "name": "X-Rated Mascara",
       "price": "22.0",
@@ -5440,7 +5441,7 @@
       "product_colors": []
     },
     {
-      "id": 537,
+      "id": 83,
       "brand": "smashbox",
       "name": "Photo Finish Lash Primer",
       "price": "22.0",
@@ -5461,7 +5462,7 @@
       "product_colors": []
     },
     {
-      "id": 536,
+      "id": 84,
       "brand": "smashbox",
       "name": "Jet Set Waterproof Eye Liner",
       "price": "22.0",
@@ -5485,7 +5486,7 @@
       ]
     },
     {
-      "id": 535,
+      "id": 85,
       "brand": "smashbox",
       "name": "Photo Angle Gel Liner",
       "price": "24.0",
@@ -5510,7 +5511,7 @@
       ]
     },
     {
-      "id": 534,
+      "id": 86,
       "brand": "smashbox",
       "name": "Limitless Eye Liner",
       "price": "19.0",
@@ -5531,7 +5532,7 @@
       "product_colors": []
     },
     {
-      "id": 533,
+      "id": 87,
       "brand": "smashbox",
       "name": "Limitless Liquid Liner",
       "price": "22.0",
@@ -5555,7 +5556,7 @@
       ]
     },
     {
-      "id": 532,
+      "id": 88,
       "brand": "smashbox",
       "name": "Always Sharp 3D Liner",
       "price": "20.0",
@@ -5585,7 +5586,7 @@
       ]
     },
     {
-      "id": 531,
+      "id": 89,
       "brand": "smashbox",
       "name": "Always Sharp Waterproof Kohl Liner",
       "price": "21.0",
@@ -5615,7 +5616,7 @@
       ]
     },
     {
-      "id": 530,
+      "id": 90,
       "brand": "smashbox",
       "name": "Double Exposure Palette",
       "price": "50.0",
@@ -5651,7 +5652,7 @@
       ]
     },
     {
-      "id": 529,
+      "id": 91,
       "brand": "smashbox",
       "name": "#ShapeMatters Palette",
       "price": "55.0",
@@ -5672,7 +5673,7 @@
       "product_colors": []
     },
     {
-      "id": 528,
+      "id": 92,
       "brand": "smashbox",
       "name": "Mini Full Exposure Palette",
       "price": "25.0",
@@ -5698,7 +5699,7 @@
       ]
     },
     {
-      "id": 527,
+      "id": 93,
       "brand": "smashbox",
       "name": "Full Exposure Palette",
       "price": "52.0",
@@ -5719,7 +5720,7 @@
       "product_colors": []
     },
     {
-      "id": 526,
+      "id": 94,
       "brand": "smashbox",
       "name": "Photo Matte Eyes Mini",
       "price": "25.0",
@@ -5749,7 +5750,7 @@
       ]
     },
     {
-      "id": 525,
+      "id": 95,
       "brand": "smashbox",
       "name": "Photo Matte Eyes",
       "price": "49.0",
@@ -5770,7 +5771,7 @@
       "product_colors": []
     },
     {
-      "id": 524,
+      "id": 96,
       "brand": "smashbox",
       "name": "MATTE EXPOSURE PALETTE",
       "price": "49.0",
@@ -5791,7 +5792,7 @@
       "product_colors": []
     },
     {
-      "id": 523,
+      "id": 97,
       "brand": "smashbox",
       "name": "Eye Shadow Trio",
       "price": "28.0",
@@ -5816,7 +5817,7 @@
       ]
     },
     {
-      "id": 522,
+      "id": 98,
       "brand": "smashbox",
       "name": "PHOTO OP EYE SHADOW SINGLES",
       "price": "18.0",
@@ -5848,7 +5849,7 @@
       ]
     },
     {
-      "id": 521,
+      "id": 99,
       "brand": "smashbox",
       "name": "BE LEGENDARY LONG-WEAR LIP LACQUER",
       "price": "24.0",
@@ -5873,7 +5874,7 @@
       ]
     },
     {
-      "id": 520,
+      "id": 100,
       "brand": "smashbox",
       "name": "L.A. Lights Cheek \u0026 Lip Color",
       "price": "29.0",

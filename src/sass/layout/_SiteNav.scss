@@ -16,10 +16,16 @@
 a:active {
   color: $hover-color;
   font-family: "Dancing Script", cursive;
+  display: inline-block;
+  animation: pulse;
+  animation-duration: 1s;
 }
 
 .navbar-collapse {
   flex-grow: 0;
 }
-
-
+.iconeHover:hover {
+  display: inline-block;
+  animation: pulse;
+  animation-duration: 1s;
+}
