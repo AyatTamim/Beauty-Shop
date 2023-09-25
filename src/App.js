@@ -1,46 +1,60 @@
 
-import './App.scss';
-import { Tex } from 'react-tex';
-import TestOne from "./components/TestOne";
-import { Route, Routes } from "react-router-dom"
-import Nav from "./components/Nav";
-import Contact from "./components/Contact";
-import Latex from "react-latex"
-import Home from "./components/Nav"
-import TaskProducts from './components/TaskProducts';
-import { createContext, useState, Context } from 'react';
-import Header from './components/Header';
-import Main from "./components/Main.tex";
-export const ThemeContext = createContext();
-export const ProductContext = createContext();
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import Home from "./views/Home";
+import About from "./views/About"
+import Products from './views/Products';
+import Cart from './views/Cart';
+import Error from './views/Error';
+import ViewMore from './views/ViewMore';
+import ShowCategoriesDetails from './views/ShowCategoriesDetails';
+import SiteNav from './layout/SiteNav';
+import "./sass/styles.scss"
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import EnglishTranslation from "./local/en.json";
+import ArabicTranslation from "./local/ar.json";
+import ShoppingCartProvider from './context/ShoppingCart';
 
 
-function App() {
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: {
+        translation: EnglishTranslation,
+      },
+      ar: {
+        translation: ArabicTranslation,
+      }
+    },
+    lng: localStorage.getItem("language") ? localStorage.getItem("language") : "en",
+    fallbackLng: "en",
 
-  const [theme, setTheme] = useState("light");
-  const handleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-  }
+    interpolation: {
+      escapeValue: false
+    }
+  });
 
-  let [product, setProduct] = useState((0));
-  const handleproduct = () => {
-    setProduct(++product)
 
-  }
+  const App = () => {
   return (
-    <>
-    
-      <ThemeContext.Provider value={theme}>
-        <h1>{theme}</h1>
-        <button onClick={handleTheme}>7aga</button>
-        <Header />
-      </ThemeContext.Provider>
-      <ProductContext.Provider value={theme}>
-        <h1>{theme}</h1>
-        <button onClick={handleproduct}>{product}</button>
-        <Header />
-      </ProductContext.Provider>
-    </>
+    <ShoppingCartProvider>
+      <SiteNav />
+      <Container className="mb-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:productId" element={<ViewMore />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/*" element={<Error />} />
+          <Route path="/products/category/:cat" element={<ShowCategoriesDetails />} />
+        </Routes>
+      </Container>
+    </ShoppingCartProvider>
   );
-}
+};
 export default App;

@@ -11,7 +11,7 @@ export default function ShowCategoriesDetails() {
         fetch("http://localhost:2222/products")
             .then(json => json.json())
             .then(res => setSelectedCat(res.filter(product => product.category === params.cat)))
-            .then(console.log(selectedCat))
+            .then(setSelectedCat)
     }
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function ShowCategoriesDetails() {
     }, [])
     return (
         <div className='text-center'>
-            {console.log(selectedCat)}
+            {selectedCat}
         </div>
     )
 }

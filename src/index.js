@@ -20,71 +20,88 @@ import FooterCategories from './views/FooterCategories';
 import ShowCategoriesDetails from './views/ShowCategoriesDetails';
 import EnglishTranslation from "./local/en.json";
 import ArabicTranslation from "./local/ar.json";
+import ShoppingCartProvider from './context/ShoppingCart';
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources: {
-      en: {
-        translation: EnglishTranslation,
-      },
-      ar: {
-        translation: ArabicTranslation,
-      }
-    },
-    lng: localStorage.getItem("language") ? localStorage.getItem("language") : "en",
-    fallbackLng: "en",
+// i18n
+//   .use(initReactI18next)
+//   .init({
+//     resources: {
+//       en: {
+//         translation: EnglishTranslation,
+//       },
+//       ar: {
+//         translation: ArabicTranslation,
+//       }
+//     },
+//     lng: localStorage.getItem("language") ? localStorage.getItem("language") : "en",
+//     fallbackLng: "en",
 
-    interpolation: {
-      escapeValue: false
-    }
-  });
+//     interpolation: {
+//       escapeValue: false
+//     }
+//   });
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "/about",
-    element: <About />
-  },
-  {
-    path: "/products",
-    element: <Products />
-  },
-  {
-    path: "/products/:productId",
-    element: <ViewMore />
-  },
-  {
-    path: "/products/add/:productId",
-    element: <Addtocart />
-  },
-  {
-    path: "/cart",
-    element: <Cart />
-  },
-  ,
-  {
-    path: "/wishlist",
-    element: <Wishlist />
-  },
-  {
-    path: "/*",
-    element: <Error />
-  },
-  {
-    path: "/products/category/:cat",
-    element: <ShowCategoriesDetails />
-  }
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home />
+//   },
+//   {
+//     path: "/about",
+//     element: <About />
+//   },
+//   {
+//     path: "/products",
+//     element: <Products />
+//   },
+//   {
+//     path: "/products/:productId",
+//     element: <ViewMore />
+//   },
+//   {
+//     path: "/products/add/:productId",
+//     element: <Addtocart />
+//   },
+//   {
+//     path: "/cart",
+//     element: <Cart />
+//   },
+//   ,
+//   {
+//     path: "/wishlist",
+//     element: <Wishlist />
+//   },
+//   {
+//     path: "/*",
+//     element: <Error />
+//   },
+//   {
+//     path: "/products/category/:cat",
+//     element: <ShowCategoriesDetails />
+//   }
+// ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <ShoppingCartProvider>
+//     <React.StrictMode>
+//       <RouterProvider router={router} />
+//     </React.StrictMode>
+//   </ShoppingCartProvider>
+
+// );
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 

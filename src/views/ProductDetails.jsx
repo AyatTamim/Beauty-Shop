@@ -1,13 +1,17 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import ViewMore from './ViewMore';
+import { useShoppingCart } from '../context/ShoppingCart';
 
-export default function ProductDetails({ product }) {
+export default function ProductDetails({ product, id }) {
+    const { getItmesQuantity, increaseCartQuantity, decreaseCartQuantity, removeCartItem } = useShoppingCart(id);
+    const quantity = getItmesQuantity();
     const params = useParams();
 
     return (
@@ -47,9 +51,24 @@ export default function ProductDetails({ product }) {
                         <Link to={`./${product.id}`} className='btn Details '>
                             View More
                         </Link>
-                        <Link to={`./add/${product.id}`} className='btn Details '>
+                        {/* <Link to={`./add/${product.id}`} className='btn Details '>
                             Add to cart
-                        </Link>
+                        </Link> */}
+                        <div className='mt-auto'>
+                            {quantity === 0 ? (
+                                <Button onClick={() => increaseCartQuantity(id)}>Add to card</Button>
+                            ) : (
+                                <div className='d-flex flex-column align-items-center justify-content-center gap-3'>
+                                    <div className='d-flex align-items-center justify-content-center gap-3'>
+                                        <Button size='sm' onClick={() => decreaseCartQuantity(id)}>-</Button>
+                                        <span>{quantity} in cart</span>
+                                        <Button size='sm' onClick={() => increaseCartQuantity(id)}>+</Button>
+                                    </div>
+
+                                    <Button onClick={()=> removeCartItem(id)}>Remove</Button>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </Card.Body>
 
