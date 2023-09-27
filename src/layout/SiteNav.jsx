@@ -13,7 +13,7 @@ import { Button } from 'react-bootstrap';
 import { useShoppingCart } from '../context/ShoppingCart';
 
 export default function SiteNav({ product, id }) {
-const {openCart} = useShoppingCart();
+  const { openCart } = useShoppingCart();
 
   const { getItmesQuantity, increaseCartQuantity, decreaseCartQuantity, removeCartItem } = useShoppingCart(id);
   const quantity = getItmesQuantity();
@@ -36,26 +36,23 @@ const {openCart} = useShoppingCart();
             <Nav className="mx-auto d-flex gap-2">
               <NavLink className="nav-link" to="/">{t('Home')}</NavLink>
               <NavLink className="nav-link " to="/about">{t("About")}</NavLink>
-              <NavLink className="nav-link " to="/cart">{t("Cart")}</NavLink>
               <NavLink className="nav-link " to="/products">{t("Product")}</NavLink>
-              {/* <NavLink className="nav-link " to="/wishlist">{<FontAwesomeIcon icon={faHeartCircleCheck} />}</NavLink> */}
               <Button className='rounded-circle ' style={{
                 width: "3rem",
                 height: "3rem",
                 backgroundColor: "black",
                 position: "relative"
               }}
-              onClick={openCart} >
+                onClick={openCart} >
                 <FontAwesomeIcon style={{
-                  marginRight: "1rem",
-                  marginBottomBottom: "1rem",
-                  fontSize: "1.3rem"
-                }} icon={faCartPlus} />
-                <div className='rounded-circle bg-danger d-flex justify-content-center align-items-center' style={{
+                  fontSize: "1.5rem"
+                }} icon={faCartPlus}  className='mt-2'/>
+                <div className='rounded-circle  d-flex justify-content-center align-items-center' style={{
                   position: "absolute",
                   width: "1.5rem",
                   bottom: "-0.7rem",
-                  right: "-0.2rem"
+                  right: "-0.2rem",
+                  backgroundColor: "#9329ad",
                 }}>
                   {quantity}
                 </div>

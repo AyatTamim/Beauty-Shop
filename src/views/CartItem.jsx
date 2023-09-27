@@ -11,7 +11,7 @@ const CartItem = ({ id, quantity }) => {
     }
     return (
         <Stack direction="horizontal" className='d-flex align-items-center' gap={2} >
-            <img src={item.product_link} alt='cart-image' style={{
+            <img src={item.image_link} alt='cart-image' style={{
                 width: "125px",
                 height: "75px",
                 objectFit: "cover"
