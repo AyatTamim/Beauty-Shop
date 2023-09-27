@@ -1,13 +1,13 @@
 import React from 'react'
-import SiteNav from '../layout/SiteNav'
 import Footer from "./Footer"
 import BackTotop from './BackTotop';
 import CallBack from './CallBack';
+import SiteNav from '../layout/SiteNav';
 
 export default function Cart() {
   return (
     <div>
-      <SiteNav />
+      <SiteNav/>
       <h2>Cart</h2>
       <CallBack/>
       

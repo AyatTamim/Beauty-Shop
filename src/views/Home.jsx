@@ -10,7 +10,7 @@ import four from "../four.jpg"
 export default function Home() {
   return (
     <>
-      <SiteNav />
+    <SiteNav/>
       <Carousel data-bs-theme="dark">
         <Carousel.Item>
           <img
@@ -69,11 +69,11 @@ export default function Home() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-        <img
-              className="d-block w-100"
-              src="https://lucymakeup.com/cdn/shop/files/Lucy_Makeup_Store_-_New_Banners_-_Summer_Products_-_1600_x_600_1600x.png?v=1688395758"
-              alt="Slide 8"
-            />
+          <img
+            className="d-block w-100"
+            src="https://lucymakeup.com/cdn/shop/files/Lucy_Makeup_Store_-_New_Banners_-_Summer_Products_-_1600_x_600_1600x.png?v=1688395758"
+            alt="Slide 8"
+          />
           <Carousel.Caption>
             <h5>Six</h5>
             <p>
@@ -82,9 +82,9 @@ export default function Home() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <BackTotop/>
+      <BackTotop />
       <Footer />
-      
+
     </>
   )
 }

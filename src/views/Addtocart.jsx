@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import SiteNav from '../layout/SiteNav'
 import Footer from './Footer'
 import { useParams } from 'react-router-dom'
 
@@ -18,7 +17,7 @@ export default function Addtocart() {
     }, [])
     return (
         <>
-            <SiteNav />
+            
             <div>Addtocart</div>
             <Footer />
         </>

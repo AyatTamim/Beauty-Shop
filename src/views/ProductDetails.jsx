@@ -17,7 +17,6 @@ export default function ProductDetails({ product, id }) {
     return (
         <>
             <Card className='text-center ' >
-
                 <Card.Body className='text-center d-flex flex-column justify-content-center cardStyle'>
                     <Image variant="top" src={product.image_link} alt={product.title} width={300} className='mx-auto pb-3 ' />
 
@@ -51,24 +50,22 @@ export default function ProductDetails({ product, id }) {
                         <Link to={`./${product.id}`} className='btn Details '>
                             View More
                         </Link>
-                        {/* <Link to={`./add/${product.id}`} className='btn Details '>
-                            Add to cart
-                        </Link> */}
-                        <div className='mt-auto'>
+                        {/* <div className='Details mt-auto'>
                             {quantity === 0 ? (
-                                <Button onClick={() => increaseCartQuantity(id)}>Add to card</Button>
+                                <Button className="Details btn" onClick={() => increaseCartQuantity(id)}>Add to card</Button>
                             ) : (
                                 <div className='d-flex flex-column align-items-center justify-content-center gap-3'>
                                     <div className='d-flex align-items-center justify-content-center gap-3'>
-                                        <Button size='sm' onClick={() => decreaseCartQuantity(id)}>-</Button>
-                                        <span>{quantity} in cart</span>
-                                        <Button size='sm' onClick={() => increaseCartQuantity(id)}>+</Button>
+                                        <Button className="Details btn"  size='sm' onClick={() => decreaseCartQuantity(id)}>&minus;</Button>
+                                        <span className="text-dark" >{quantity} in cart</span>
+                                        <Button className="Details btn" size='sm' onClick={() => increaseCartQuantity(id)}>+</Button>
                                     </div>
 
                                     <Button onClick={()=> removeCartItem(id)}>Remove</Button>
                                 </div>
                             )}
-                        </div>
+                        </div> */}
+
                     </div>
                 </Card.Body>
 

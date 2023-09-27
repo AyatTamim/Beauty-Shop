@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import SiteNav from '../layout/SiteNav'
 import { useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { Container, Form } from "react-bootstrap";
@@ -85,7 +84,7 @@ export default function EditProduct() {
     }
     return (
         <div>
-            <SiteNav />
+            
             <Container className="mainContent text-center">
                 <h2>{product.title}</h2>
                 <Form

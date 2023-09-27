@@ -1,14 +1,19 @@
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
-import SiteNav from '../layout/SiteNav'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import Footer from './Footer';
 import BackTotop from './BackTotop';
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
+import SiteNav from '../layout/SiteNav';
+import { useShoppingCart } from '../context/ShoppingCart';
+import { Button } from 'react-bootstrap';
 
-export default function ViewMore() {
+export default function ViewMore({ id }) {
+    const { getItmesQuantity, increaseCartQuantity, decreaseCartQuantity, removeCartItem } = useShoppingCart(id);
+    const quantity = getItmesQuantity();
+
     const { t } = useTranslation();
     document.body.dir = i18n.dir();
     let changeLAnguage = () => {
@@ -34,6 +39,7 @@ export default function ViewMore() {
     return (
         <>
             <SiteNav />
+            <div className='d-flex flex-column'>
             <div className='text-center d-flex viewMore'>
                 <Card className=" p-5">
                     <Card.Body className=''>
@@ -44,6 +50,22 @@ export default function ViewMore() {
                         <Card.Title className='pt-3' >{product.description}</Card.Title>
                     </Card.Body>
                 </Card >
+            </div>
+            <div className='Details mt-auto pb-3'>
+                            {quantity === 0 ? (
+                                <Button className="Details btn" onClick={() => increaseCartQuantity(id)}>Add to card</Button>
+                            ) : (
+                                <div className='d-flex flex-column align-items-center justify-content-center gap-3'>
+                                    <div className='d-flex align-items-center justify-content-center gap-3'>
+                                        <Button className="Details btn"  size='sm' onClick={() => decreaseCartQuantity(id)}>&minus;</Button>
+                                        <span className="text-dark" >{quantity} in cart</span>
+                                        <Button className="Details btn" size='sm' onClick={() => increaseCartQuantity(id)}>+</Button>
+                                    </div>
+
+                                    <Button onClick={()=> removeCartItem(id)}>Remove</Button>
+                                </div>
+                            )}
+                        </div>
             </div>
             <Footer />
             <BackTotop />

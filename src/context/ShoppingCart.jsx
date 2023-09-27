@@ -1,10 +1,19 @@
 import React, { useContext, useState } from 'react'
 import { createContext } from "react";
+import ShoppingCartProuct from '../views/ShoppingCartProuct';
 
 const ShoppingCart = createContext({});
-const ShoppingCartProvider = ({ childern }) => {
+const ShoppingCartProvider = ({ children }) => {
+    const [isOpen, setIsOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 
+    const openCart = () => {
+        setIsOpen(true);
+    };
+
+    const closeCart = () => {
+        setIsOpen(false);
+    };
     const getItmesQuantity = (id) => {
         return cartItems.find((item) => item.id === id)?.quantity || 0;
     };
@@ -51,9 +60,12 @@ const ShoppingCartProvider = ({ childern }) => {
                 getItmesQuantity,
                 increaseCartQuantity,
                 decreaseCartQuantity,
-                removeCartItem
+                removeCartItem,
+                openCart,
+                closeCart,
             }}>
-            {childern}
+            {children}
+            <ShoppingCartProuct isOpen={isOpen}/>
         </ShoppingCart.Provider>
     )
 };

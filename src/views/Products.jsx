@@ -1,5 +1,4 @@
 import React, { useTransition } from 'react'
-import SiteNav from '../layout/SiteNav'
 import { Container, Row, Col } from 'react-bootstrap';
 import ProductDetails from './ProductDetails';
 import Button from 'react-bootstrap/Button';
@@ -11,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import Footer from "./Footer"
 import BackTotop from './BackTotop';
+import SiteNav from '../layout/SiteNav';
 
 export default function Products() {
   // const params = useParams();

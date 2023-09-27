@@ -6,11 +6,17 @@ import Navbar from 'react-bootstrap/Navbar';
 import checks from "../checks.png"
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe, faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { faGlobe, faHeartCircleCheck, faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
+import { Button } from 'react-bootstrap';
+import { useShoppingCart } from '../context/ShoppingCart';
 
-export default function SiteNav() {
+export default function SiteNav({ product, id }) {
+const {openCart} = useShoppingCart();
+
+  const { getItmesQuantity, increaseCartQuantity, decreaseCartQuantity, removeCartItem } = useShoppingCart(id);
+  const quantity = getItmesQuantity();
   const { t } = useTranslation();
   document.body.dir = i18n.dir();
   let changeLAnguage = () => {
@@ -23,16 +29,37 @@ export default function SiteNav() {
   return (
     <>
       <Navbar expand="md" >
-        <Container className='pb-5'>
+        <Container className='pb-3 pt-3'>
           <Navbar.Brand href="/" className='BeautyShop' >Beauty Shop</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mx-auto">
+            <Nav className="mx-auto d-flex gap-2">
               <NavLink className="nav-link" to="/">{t('Home')}</NavLink>
               <NavLink className="nav-link " to="/about">{t("About")}</NavLink>
               <NavLink className="nav-link " to="/cart">{t("Cart")}</NavLink>
               <NavLink className="nav-link " to="/products">{t("Product")}</NavLink>
-              <NavLink className="nav-link " to="/wishlist">{<FontAwesomeIcon icon={faHeartCircleCheck} />}</NavLink>
+              {/* <NavLink className="nav-link " to="/wishlist">{<FontAwesomeIcon icon={faHeartCircleCheck} />}</NavLink> */}
+              <Button className='rounded-circle ' style={{
+                width: "3rem",
+                height: "3rem",
+                backgroundColor: "black",
+                position: "relative"
+              }}
+              onClick={openCart} >
+                <FontAwesomeIcon style={{
+                  marginRight: "1rem",
+                  marginBottomBottom: "1rem",
+                  fontSize: "1.3rem"
+                }} icon={faCartPlus} />
+                <div className='rounded-circle bg-danger d-flex justify-content-center align-items-center' style={{
+                  position: "absolute",
+                  width: "1.5rem",
+                  bottom: "-0.7rem",
+                  right: "-0.2rem"
+                }}>
+                  {quantity}
+                </div>
+              </Button>
               <FontAwesomeIcon className="m-1 pt-1 iconeHover" size="xl" icon={faGlobe} onClick={changeLAnguage} />
             </Nav>
           </Navbar.Collapse>
